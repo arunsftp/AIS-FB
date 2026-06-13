@@ -1,0 +1,381 @@
+:root {
+  --bg: #f4efe7;
+  --panel: rgba(255, 252, 247, 0.9);
+  --panel-strong: #fffdf8;
+  --text: #1d2433;
+  --muted: #5a6578;
+  --line: rgba(29, 36, 51, 0.14);
+  --brand: #0f766e;
+  --brand-dark: #134e4a;
+  --accent: #c2410c;
+  --danger: #b42318;
+  --success: #166534;
+  --shadow: 0 24px 70px rgba(16, 24, 40, 0.12);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(194, 65, 12, 0.15), transparent 26%),
+    linear-gradient(180deg, #f8f3ed 0%, #ece5da 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(248, 243, 237, 0.78);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.brand {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--brand-dark);
+}
+
+.page-section {
+  padding: 3rem 0 4rem;
+}
+
+.application-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr 0.95fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.hero-panel {
+  background:
+    linear-gradient(145deg, rgba(15, 118, 110, 0.92), rgba(19, 78, 74, 0.94)),
+    #0f766e;
+  color: #f8fafc;
+}
+
+.hero-panel .eyebrow {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.hero-panel h1,
+.form-panel h2,
+.summary-panel h2,
+.info-panel h2 {
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.hero-panel h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 0.95;
+}
+
+.hero-copy,
+.lead-copy,
+.section-heading p,
+.footer-copy,
+.footer-meta {
+  color: inherit;
+  opacity: 0.84;
+}
+
+.hero-metrics {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.hero-metrics article {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-metrics strong {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.section-heading {
+  margin-bottom: 1.2rem;
+}
+
+.section-heading p,
+.preview-list dt,
+.preview-list dd,
+.checklist-card li,
+.feature-list li {
+  color: var(--muted);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+label span {
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  background: var(--panel-strong);
+  color: var(--text);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+.nav-list a:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.28);
+  outline-offset: 2px;
+}
+
+.stacked-field {
+  margin-top: 1rem;
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.checkbox-field input {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+}
+
+.error-text {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.3rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: var(--brand);
+  color: #f8fafc;
+}
+
+.secondary-button {
+  background: rgba(29, 36, 51, 0.08);
+  color: var(--text);
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status-banner {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.status-banner--success {
+  background: rgba(22, 101, 52, 0.12);
+  color: var(--success);
+}
+
+.status-banner--error {
+  background: rgba(180, 35, 24, 0.1);
+  color: var(--danger);
+}
+
+.status-banner--submitting {
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--brand-dark);
+}
+
+.preview-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.preview-list div {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.preview-list dt {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.preview-list dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.checklist-card {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(15, 118, 110, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.checklist-card h3 {
+  margin-top: 0;
+}
+
+.checklist-card ul,
+.feature-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.narrow-flow {
+  max-width: 760px;
+}
+
+.info-panel {
+  margin-top: 1.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.footer-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header__inner,
+  .site-footer__inner,
+  .form-actions,
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-section {
+    padding-top: 2rem;
+  }
+}
