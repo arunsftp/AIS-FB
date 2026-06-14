@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: ais-fb-app
+  namespace: ais-fb-dev
   labels:
-    app: myapp
+    app: ais-fb-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapp
+      app: ais-fb-app
   template:
     metadata:
       labels:
-        app: myapp
+        app: ais-fb-app
     spec:
       containers:
       - name: myapp
